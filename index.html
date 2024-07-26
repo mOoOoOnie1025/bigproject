@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>삼성생명</title>
+    <style>
+        .navbar {
+            display: flex;
+            background-color: #333;
+            overflow: hidden;
+        }
+        .navbar a {
+            float: left;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        .navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        .content img {
+            display: none;
+            width: 100%;
+        }
+        .content img.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="#home" onclick="showContent('home')">홈</a>
+        <a href="#result1" onclick="showContent('result1')">평가결과 - 종합리포트</a>
+        <a href="#result2" onclick="showContent('result2')">평가결과 - 세부분석1</a>
+        <a href="#result3" onclick="showContent('result3')">평가결과 - 세부분석2</a>
+        <a href="#result4" onclick="showContent('result4')">평가결과 - 세부분석3</a>
+    </div>
+    <div class="content">
+        <img id="home" class="active" src="main page 설계사용.png" alt="홈 페이지 이미지">
+        <img id="result1" src="상세피드백페이지.png" alt="평가결과 - 종합리포트 페이지 이미지">
+        <img id="result2" src="KakaoTalk_20240725_103044683_02.png" alt="평가결과 - 세부분석1 페이지 이미지">
+        <img id="result3" src="KakaoTalk_20240725_103044683_03.png" alt="평가결과 - 세부분석2 페이지 이미지">
+        <img id="result4" src="KakaoTalk_20240725_103044683_04.png" alt="평가결과 - 세부분석3 페이지 이미지">
+        <!-- 나머지 이미지도 이런 식으로 추가하세요 -->
+    </div>
+    <script>
+        function showContent(id) {
+            var images = document.querySelectorAll('.content img');
+            images.forEach(function(img) {
+                img.classList.remove('active');
+            });
+            document.getElementById(id).classList.add('active');
+        }
+    </script>
+</body>
+</html>
